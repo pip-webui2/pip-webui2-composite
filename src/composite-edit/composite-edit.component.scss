@@ -5,15 +5,21 @@
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
      :host {
-        border: dashed 2px mat-color($foreground, divider);
-        .delete-button {
-            color: mat-color($foreground, text);
-            background: mat-color($background, card);
-            opacity: 0.56;
-        }
-
-        &:hover pip-composite {
-            background: mat-color($foreground, divider);
+        background: mat-color($background, card);
+        .pip-composite-element {
+            .pip-composite-element-header {
+                background: mat-color($foreground, divider);
+            }
+            .pip-composite-element-body {
+                background: invert(mat-color($background, card, 0.005));
+                textarea {
+                    color: mat-color($foreground, text);
+                    background: mat-color($background, card);
+                }
+                textarea::placeholder {
+                    color: mat-color($foreground, secondary-text);
+                }
+            }
         }
     }
 }
@@ -75,23 +81,49 @@
 }
 
 :host {
-    width: 80px;
-    height: 80px;
     display: block;
-    box-sizing: content-box;
-    position: relative;
-    .delete-button {
-        position: absolute;
-        top: 4px;
-        right: 4px;
-    }
-    input[type="file"] {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        cursor: pointer;
+    width: 100%;
+    height: 100%;
+    .pip-composite-element {
+        .pip-composite-element-header {
+            height: 40px;
+            position: relative;
+            .mat-icon-button {
+                position: absolute;
+                &:first-of-type {
+                    left: calc(50% - 20px);
+                }
+                &:last-of-type {
+                    right: 4px;
+                }
+            }
+        }
+        .pip-composite-element-body {
+            min-height: 100px;
+            textarea {
+                resize: vertical;
+                font-size: 16px;
+                font-family: Roboto;
+                font-weight: 400;
+                border: none;
+                padding: 16px;
+                outline: none;
+                width: 100%;
+                min-height: 100px;
+                max-height: 400px;
+                box-sizing: border-box;
+            }
+            .pip-location-edit {
+                /deep/ mat-form-field .mat-input-flex.mat-form-field-flex {
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    box-sizing: border-box;
+                    .mat-input-infix.mat-form-field-infix {
+                        padding-top: 3px;
+                        padding-bottom: 8px;
+                    }
+                }
+            }
+        }
     }
 }

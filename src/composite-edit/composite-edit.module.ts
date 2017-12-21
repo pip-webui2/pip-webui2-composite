@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
-import { MatButtonModule, MatIconModule } from '@angular/material';
-
-import { PipCompositeModule } from '../composite/composite.module';
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule, MatIconModule, MatInputModule } from '@angular/material';
 
 import { PipCompositeEditComponent } from './composite-edit.component';
+import { PipDraggableModule } from 'pip-webui2-behaviors';
+import { PiplocationEditModule } from 'pip-webui2-locations';
 
 @NgModule({
   declarations: [
@@ -13,10 +15,14 @@ import { PipCompositeEditComponent } from './composite-edit.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    FlexLayoutModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
 
-    PipCompositeModule
+    PipDraggableModule,
+    PiplocationEditModule
   ],
   exports: [
     PipCompositeEditComponent

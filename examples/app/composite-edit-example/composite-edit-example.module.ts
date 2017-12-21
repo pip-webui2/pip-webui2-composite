@@ -7,7 +7,7 @@ import { MatButtonModule, MatIconModule, MatButtonToggleModule } from '@angular/
 import { TranslateModule } from '@ngx-translate/core';
 
 import { CompositeEditExampleComponent } from './composite-edit-example.component';
-import { PipCompositeEditModule, PipCompositeEditModule } from '../pip-webui2-documents';
+import { PipCompositeEditModule } from '../pip-webui2-composite';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { PipCompositeEditModule, PipCompositeEditModule } from '../pip-webui2-do
 
     TranslateModule,
 
-    PipCompositeEditModule,
     PipCompositeEditModule
   ],
   exports: [

@@ -1,0 +1,16 @@
+<div class="pip-composite-body">
+    <div *ngFor="let element of elements" class="pip-composite-element" pipDrag="true" pipDrop="true" forceTouch="true" touchDelay="100">
+        <div class="pip-composite-element-header">
+            <button mat-icon-button>
+                <mat-icon>drag_handle</mat-icon>
+            </button>
+            <button mat-icon-button>
+                <mat-icon>clear</mat-icon>
+            </button>
+        </div>
+        <div class="pip-composite-element-body" [ngSwitch]="element.type" pipDragCancel>
+            <pip-location-edit *ngSwitchCase="elementTypes.LOCATION" showInput="true"></pip-location-edit>
+            <textarea placeholder="Text" *ngSwitchCase="elementTypes.TEXT"></textarea>
+        </div>
+    </div>
+</div>
