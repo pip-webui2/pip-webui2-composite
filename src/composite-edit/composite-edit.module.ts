@@ -8,6 +8,9 @@ import { MatButtonModule, MatIconModule, MatInputModule } from '@angular/materia
 import { PipCompositeEditComponent } from './composite-edit.component';
 import { PipDraggableModule } from 'pip-webui2-behaviors';
 import { PiplocationEditModule } from 'pip-webui2-locations';
+import { PipTimeRangeEditModule } from 'pip-webui2-dates';
+import { PipDocumentListEditModule } from 'pip-webui2-documents';
+import { PipPictureListEditModule } from 'pip-webui2-pictures';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { PiplocationEditModule } from 'pip-webui2-locations';
     MatInputModule,
 
     PipDraggableModule,
-    PiplocationEditModule
+    PiplocationEditModule,
+    PipTimeRangeEditModule,
+    PipDocumentListEditModule,
+    PipPictureListEditModule
   ],
   exports: [
     PipCompositeEditComponent

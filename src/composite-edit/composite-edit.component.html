@@ -9,8 +9,11 @@
             </button>
         </div>
         <div class="pip-composite-element-body" [ngSwitch]="element.type" pipDragCancel>
-            <pip-location-edit *ngSwitchCase="elementTypes.LOCATION" showInput="true"></pip-location-edit>
             <textarea placeholder="Text" *ngSwitchCase="elementTypes.TEXT"></textarea>
+            <pip-location-edit *ngSwitchCase="elementTypes.LOCATION" showInput="true"></pip-location-edit>
+            <pip-document-list-edit *ngSwitchCase="elementTypes.DOCUMENTS" defaultAddIcon="insert_drive_file"></pip-document-list-edit>
+            <pip-picture-list-edit *ngSwitchCase="elementTypes.PICTURES" defaultAddIcon="insert_photo"></pip-picture-list-edit>
+            <pip-time-range-edit *ngSwitchCase="elementTypes.TIME" ></pip-time-range-edit>
         </div>
     </div>
 </div>

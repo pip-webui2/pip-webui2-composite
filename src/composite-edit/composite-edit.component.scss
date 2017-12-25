@@ -124,6 +124,25 @@
                     }
                 }
             }
+            .pip-document-list-edit,
+            .pip-picture-list-edit {
+                margin-top: 16px;
+                margin-left: 16px;
+                display: block;
+            }
+            .pip-time-range-edit {
+                ::ng-deep >div {
+                    padding-top: 16px;
+                    padding-left: 16px;
+                    padding-right: 16px;
+                    .time-container {
+                        min-width: 0px;
+                        mat-form-field {
+                            min-width: 0px;
+                        }
+                    }
+                }
+            }
         }
     }
 }

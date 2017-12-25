@@ -15,6 +15,15 @@ export class CompositeEditExampleComponent implements OnInit {
         },
         {
             type: PipCompositeElementTypes.LOCATION
+        },
+        {
+            type: PipCompositeElementTypes.DOCUMENTS
+        },
+        {
+            type: PipCompositeElementTypes.PICTURES
+        },
+        {
+            type: PipCompositeElementTypes.TIME
         }
     ];
 
