@@ -9,7 +9,8 @@ import { PipCompositeElement } from '../shared/composite-element.model';
     styleUrls: ['./composite-edit.component.scss']
 })
 export class PipCompositeEditComponent implements OnInit, AfterViewInit {
-    @Input() elements: PipCompositeElement[] = [];
+    @Input() public elements: PipCompositeElement[] = [];
+    @Output() onElementsChange: EventEmitter<PipCompositeElement[]> = new EventEmitter<PipCompositeElement[]>();
 
     public elementTypes: CompositeElementTypes = new CompositeElementTypes();
 
@@ -28,5 +29,11 @@ export class PipCompositeEditComponent implements OnInit, AfterViewInit {
 
     ngOnDestroy() {
 
+    }
+
+    public deleteElement(index) {
+        this.elements.splice(index, 1);
+        console.log('this.elements', this.elements);
+        this.onElementsChange.emit(this.elements);
     }
 }
