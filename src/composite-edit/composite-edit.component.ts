@@ -11,6 +11,7 @@ import { PipCompositeElement } from '../shared/composite-element.model';
 export class PipCompositeEditComponent implements OnInit, AfterViewInit {
     @Input() public elements: PipCompositeElement[] = [];
     @Output() onElementsChange: EventEmitter<PipCompositeElement[]> = new EventEmitter<PipCompositeElement[]>();
+    @Input() scrollContainer: string = null;
 
     private draggedElementHeight: number;
     private prevStyledElement: HTMLElement;
@@ -67,6 +68,8 @@ export class PipCompositeEditComponent implements OnInit, AfterViewInit {
 
         let copy: PipCompositeElement = this.elements.splice(this.draggedIndex, 1)[0];
         this.elements.splice(this.draggedIndex < index ? index - 1 : index, 0, copy);
+
+        this.onElementsChange.emit(this.elements);
     }
 
     public onDragStop() {

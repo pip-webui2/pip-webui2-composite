@@ -49,5 +49,8 @@ export class CompositeEditExampleComponent implements OnInit {
         this.endDate.setHours(this.startDate.getHours() + 10);
     }
 
+    public onSaveForm() {
+        console.log('elements', this.elements);
+    }
 
 }
