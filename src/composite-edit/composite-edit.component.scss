@@ -144,5 +144,16 @@
                 }
             }
         }
+
+        &.last-element {
+            height: 24px;
+            transition: height .35s ease;
+        }
+    }
+
+    &.animations {
+        .pip-composite-element {
+            transition: padding-top .35s ease;
+        }
     }
 }

@@ -1,5 +1,6 @@
 <div class="pip-composite-body">
-    <div *ngFor="let element of elements; let i = index" class="pip-composite-element" pipDrag="true" pipDrop="true" forceTouch="true" touchDelay="100">
+    <div *ngFor="let element of elements; let i = index" class="pip-composite-element" 
+        pipDrag="true" pipDrop="true" forceTouch="true" touchDelay="100" (dragStart)="onDragStart($event, i)" (enter)="onEnter($event, i)" (dragStop)="onDragStop($event, i)" (dropSuccess)="onDropSuccess($event, i)">
         <div class="pip-composite-element-header">
             <button mat-icon-button>
                 <mat-icon>drag_handle</mat-icon>
@@ -16,4 +17,5 @@
             <pip-time-range-edit [startDate]="element.startDate" [endDate]="element.endDate" *ngSwitchCase="elementTypes.TIME" ></pip-time-range-edit>
         </div>
     </div>
+    <div class="pip-composite-element last-element" pipDrop="true" (enter)="onEnter($event, elements.length)" (dropSuccess)="onDropSuccess($event, elements.length)"></div>
 </div>
