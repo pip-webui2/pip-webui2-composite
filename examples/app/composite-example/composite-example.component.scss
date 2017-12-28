@@ -1,1 +1,10 @@
+:host {
+    mat-card {
+        max-height: 600px;
+        overflow: auto;
+    }
 
+    button {
+        margin-top: 16px;
+    }
+}

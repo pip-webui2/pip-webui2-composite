@@ -8,6 +8,11 @@ import { TranslateModule } from '@ngx-translate/core'
 
 import { PipCompositeComponent } from './composite.component';
 
+import { PipLocationModule } from 'pip-webui2-locations';
+import { PipTimeRangeModule } from 'pip-webui2-dates';
+import { PipDocumentListModule } from 'pip-webui2-documents';
+import { PipCollageModule } from 'pip-webui2-pictures';
+
 @NgModule({
   declarations: [
     PipCompositeComponent
@@ -19,7 +24,12 @@ import { PipCompositeComponent } from './composite.component';
     MatProgressBarModule,
     MatButtonModule,
 
-    TranslateModule
+    TranslateModule,
+
+    PipLocationModule,
+    PipTimeRangeModule,
+    PipDocumentListModule,
+    PipCollageModule
   ],
   exports: [
     PipCompositeComponent
