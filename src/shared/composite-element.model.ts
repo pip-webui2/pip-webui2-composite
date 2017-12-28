@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import { CompositeElementType } from './composite-element-types.model';
 
 export class PipCompositeElement {

@@ -14,12 +14,16 @@ import { AppComponent } from './app.component';
 import { CompositeExampleModule } from './composite-example/composite-example.module';
 import { CompositeExampleComponent } from './composite-example/composite-example.component';
 
+import { ChecklistExampleModule } from './checklist-example/checklist-example.module';
+import { ChecklistExampleComponent } from './checklist-example/checklist-example.component';
+
 import { CompositeEditExampleModule } from './composite-edit-example/composite-edit-example.module';
 import { CompositeEditExampleComponent } from './composite-edit-example/composite-edit-example.component';
 
 const appRoutes: Routes = [
   { path: 'composite', component: CompositeExampleComponent },
   { path: 'composite_edit', component: CompositeEditExampleComponent },
+  { path: 'checklist', component: ChecklistExampleComponent },
   { path: '', pathMatch: 'full', redirectTo: 'composite' }
 ];
 
@@ -47,6 +51,7 @@ const appRoutes: Routes = [
     ExampleListModule,
     CompositeExampleModule,
     CompositeEditExampleModule,
+    ChecklistExampleModule,
 
     RouterModule.forRoot(appRoutes, { useHash: true })
   ],

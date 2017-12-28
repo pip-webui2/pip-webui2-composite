@@ -1,12 +1,12 @@
 import * as _ from 'lodash';
-import { Component, trigger, state, transition, style, animate, Input, Output, OnInit, AfterViewInit, ViewChild, EventEmitter, Renderer, ElementRef, HostListener } from '@angular/core';
-import { CompositeElementTypes } from '../shared/composite-element-types.model';
-import { PipCompositeElement } from '../shared/composite-element.model';
+import { Component, QueryList, trigger, state, transition, style, animate, Input, Output, OnInit, AfterViewInit, EventEmitter, Renderer, ElementRef, HostListener, ViewChildren } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { PipChecklistElement } from '../shared/checklist-element.model';
 
 @Component({
-    selector: 'pip-composite-edit',
-    templateUrl: 'composite-edit.component.html',
-    styleUrls: ['./composite-edit.component.scss'],
+    selector: 'pip-checklist-edit',
+    templateUrl: 'checklist-edit.component.html',
+    styleUrls: ['./checklist-edit.component.scss'],
     animations: [
         trigger('fadeIn', [
             transition('* => void', [
@@ -20,42 +20,37 @@ import { PipCompositeElement } from '../shared/composite-element.model';
         ]),
     ]
 })
-export class PipCompositeEditComponent implements OnInit, AfterViewInit {
-    @Input() public elements: PipCompositeElement[] = [];
-    @Output() onElementsChange: EventEmitter<PipCompositeElement[]> = new EventEmitter<PipCompositeElement[]>();
-    @Input() scrollContainer: string = null;
-
-    private draggedElementHeight: number;
-    private prevStyledElement: HTMLElement;
-    private draggedHtmlElement: HTMLElement;
-    private draggedIndex: number = null;
-    private draggedElement: PipCompositeElement;
-
-    private debouncedSetPadding: any;
-
-    public disableForAnimation: boolean = true;
-
-    public elementTypes: CompositeElementTypes = new CompositeElementTypes();
-
-    constructor(
-        private renderer: Renderer,
-        private elRef: ElementRef
-    ) {
-        renderer.setElementClass(elRef.nativeElement, 'pip-composite-edit', true);
-    }
+export class PipChecklistEditComponent implements OnInit, AfterViewInit {
+    @Input() public elements: PipChecklistElement[] = [];
+    @Output() onElementsChange: EventEmitter<PipChecklistElement[]> = new EventEmitter<PipChecklistElement[]>();
+    @Input() disabled: boolean = false;
 
     ngOnInit() {
         this.disableForAnimation = false;
     }
 
-    ngAfterViewInit() {
+    private draggedElementHeight: number;
+    private prevStyledElement: HTMLElement;
+    private draggedHtmlElement: HTMLElement;
+    private draggedIndex: number = null;
+    private draggedElement: PipChecklistElement;
+
+    private debouncedSetPadding: any;
+
+    public disableForAnimation: boolean = true;
+
+    constructor(
+        private renderer: Renderer,
+        private elRef: ElementRef,
+        private translate: TranslateService
+    ) {
+        renderer.setElementClass(elRef.nativeElement, 'pip-checklist-edit', true);
+    }
+
+    ngAfterViewInit() { 
         this.debouncedSetPadding = _.throttle((element) => {
             this.setPadding(element);
         }, 250);
-    }
-
-    ngOnDestroy() {
-
     }
 
     public deleteElement(index) {
@@ -66,7 +61,7 @@ export class PipCompositeEditComponent implements OnInit, AfterViewInit {
     public onDragStart(event, index) {
         this.draggedIndex = index;
         this.draggedElement = this.elements[index];
-        let elements = this.elRef.nativeElement.querySelectorAll('.pip-composite-element');
+        let elements = this.elRef.nativeElement.querySelectorAll('.pip-checklist-element');
         this.draggedHtmlElement = elements[index];
         this.draggedElementHeight = elements[index].offsetHeight;
         if (index < elements.length - 1) {
@@ -80,14 +75,14 @@ export class PipCompositeEditComponent implements OnInit, AfterViewInit {
     }
 
     public onEnter(event, index) {
-        let elements = this.elRef.nativeElement.querySelectorAll('.pip-composite-element');
+        let elements = this.elRef.nativeElement.querySelectorAll('.pip-checklist-element');
         this.debouncedSetPadding(elements[index]);
     }
 
     public onDropSuccess(event, index) {
         if (this.draggedHtmlElement == event.target) return;
 
-        let copy: PipCompositeElement = this.elements.splice(this.draggedIndex, 1)[0];
+        let copy: PipChecklistElement = this.elements.splice(this.draggedIndex, 1)[0];
         this.elements.splice(this.draggedIndex < index ? index - 1 : index, 0, copy);
 
         this.onElementsChange.emit(this.elements);
@@ -102,6 +97,11 @@ export class PipCompositeEditComponent implements OnInit, AfterViewInit {
             this.prevStyledElement = null;
             this.disableForAnimation = false;
         });
+    }
+
+    public onAdd() {
+        this.elements.push(new PipChecklistElement());
+        this.onElementsChange.emit(this.elements);
     }
 
     private setPadding(element: HTMLElement) {

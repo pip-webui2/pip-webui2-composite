@@ -1,5 +1,5 @@
 <div class="pip-composite-body">
-    <div *ngFor="let element of elements; let i = index" class="pip-composite-element" [scrollContainer]="scrollContainer"
+    <div [@fadeIn]="''" [@.disabled]="disableForAnimation" *ngFor="let element of elements; let i = index" class="pip-composite-element" [scrollContainer]="scrollContainer"
         pipDrag="true" pipDrop="true" forceTouch="true" touchDelay="100" (dragStart)="onDragStart($event, i)" (enter)="onEnter($event, i)" (dragStop)="onDragStop($event, i)" (dropSuccess)="onDropSuccess($event, i)">
         <div class="pip-composite-element-header">
             <button mat-icon-button>

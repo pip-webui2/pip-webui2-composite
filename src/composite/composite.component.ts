@@ -7,19 +7,7 @@ import { PipCompositeElement } from '../shared/composite-element.model';
 @Component({
     selector: 'pip-composite',
     templateUrl: 'composite.component.html',
-    styleUrls: ['./composite.component.scss'],
-    animations: [
-        trigger('fadeIn', [
-            transition(':enter', [
-                style({ width: '0', opacity: '0' }),
-                animate('.35s ease', style({ width: '80px', opacity: '1' })),
-            ]),
-            transition(':leave', [
-                style({ width: '80px', opacity: '1', 'margin-right': '8px' }),
-                animate('.35s ease', style({ width: '0', opacity: '0', 'margin-right': '0' })),
-            ])
-        ]),
-    ]
+    styleUrls: ['./composite.component.scss']
 })
 export class PipCompositeComponent implements OnInit, AfterViewInit {
     @Input() public elements: PipCompositeElement[] = [];

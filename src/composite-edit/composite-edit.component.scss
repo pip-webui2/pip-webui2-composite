@@ -11,10 +11,10 @@
                 background: mat-color($foreground, divider);
             }
             .pip-composite-element-body {
-                background: invert(mat-color($background, card, 0.005));
+                background: mat-color($foreground, divider, 0.05);
                 textarea {
                     color: mat-color($foreground, text);
-                    background: mat-color($background, card);
+                    background: transparent;
                 }
                 textarea::placeholder {
                     color: mat-color($foreground, secondary-text);
@@ -126,8 +126,8 @@
             }
             .pip-document-list-edit,
             .pip-picture-list-edit {
-                margin-top: 16px;
-                margin-left: 16px;
+                padding-top: 16px;
+                padding-left: 16px;
                 display: block;
             }
             .pip-time-range-edit {
@@ -153,7 +153,7 @@
 
     &.animations {
         .pip-composite-element {
-            transition: padding-top .35s ease;
+            transition: padding-top .25s ease;
         }
     }
 }

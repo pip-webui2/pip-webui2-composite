@@ -51,6 +51,9 @@ export class AppComponent {
     },
     {
       name: 'Composite Edit', id: 'composite_edit', route: 'composite_edit'
+    },
+    {
+      name: 'Checklist', id: 'checklist', route: 'checklist'
     }
   ];
   @ViewChild('sidenav') sidenav: MatSidenav;
