@@ -1,4 +1,5 @@
 import { CompositeElementType } from './composite-element-types.model';
+import { PipChecklistElement } from './checklist-element.model';
 
 export class PipCompositeElement {
     public type: CompositeElementType;
@@ -9,4 +10,5 @@ export class PipCompositeElement {
     public locationName?: string;
     public startDate?: Date; 
     public endDate?: Date;
+    public elements?: PipChecklistElement[];
 }

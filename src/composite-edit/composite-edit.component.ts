@@ -10,12 +10,12 @@ import { PipCompositeElement } from '../shared/composite-element.model';
     animations: [
         trigger('fadeIn', [
             transition('* => void', [
-                style({ height: '48px', opacity: '1'}),
-                animate('.35s ease', style({ height: '0', opacity: '0'})),
+                style({ 'max-height': '200px', opacity: '1'}),
+                animate('.35s ease', style({ 'max-height': '0', opacity: '0'})),
             ]),
             transition('void => *', [
-                style({ height: '0', opacity: '0'}),
-                animate('.35s ease', style({ height: '48px', opacity: '1'})),
+                style({ opacity: '0'}),
+                animate('.35s ease', style({ opacity: '1'})),
             ])
         ]),
     ]

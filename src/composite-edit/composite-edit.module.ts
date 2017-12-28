@@ -11,6 +11,7 @@ import { PiplocationEditModule } from 'pip-webui2-locations';
 import { PipTimeRangeEditModule } from 'pip-webui2-dates';
 import { PipDocumentListEditModule } from 'pip-webui2-documents';
 import { PipPictureListEditModule } from 'pip-webui2-pictures';
+import { PipChecklistEditModule } from '../checklist-edit/checklist-edit.module'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PipPictureListEditModule } from 'pip-webui2-pictures';
     PiplocationEditModule,
     PipTimeRangeEditModule,
     PipDocumentListEditModule,
-    PipPictureListEditModule
+    PipPictureListEditModule,
+    PipChecklistEditModule
   ],
   exports: [
     PipCompositeEditComponent

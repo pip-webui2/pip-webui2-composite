@@ -4,12 +4,16 @@
 @mixin checklist-mixin($theme) {
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
+    $primary: map-get($theme, primary);
      :host {
         background: mat-color($background, card);
         .pip-checklist-element>div {
             background: mat-color($foreground, divider, 0.05);
             input {
                 color: mat-color($foreground, text);
+                &:focus::placeholder {
+                    color: mat-color($primary);
+                }
             }
             input::placeholder {
                 color: mat-color($foreground, secondary-text);

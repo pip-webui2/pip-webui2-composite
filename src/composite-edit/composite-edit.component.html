@@ -18,6 +18,7 @@
             <pip-document-list-edit [documents]="element.documents" (onUpdateDocuments)="element.documents = $event" *ngSwitchCase="elementTypes.DOCUMENTS" defaultAddIcon="insert_drive_file"></pip-document-list-edit>
             <pip-picture-list-edit [(srcs)]="element.pictures" *ngSwitchCase="elementTypes.PICTURES" defaultAddIcon="insert_photo"></pip-picture-list-edit>
             <pip-time-range-edit [startDate]="element.startDate" [endDate]="element.endDate" (startDateChange)="element.startDate = $event" (endDateChange)="element.endDate = $event" *ngSwitchCase="elementTypes.TIME" ></pip-time-range-edit>
+            <pip-checklist-edit [elements]="element.elements" *ngSwitchCase="elementTypes.CHECKLIST" ></pip-checklist-edit>
         </div>
     </div>
     <div class="pip-composite-element last-element" pipDrop="true" (enter)="onEnter($event, elements.length)" (dropSuccess)="onDropSuccess($event, elements.length)"></div>

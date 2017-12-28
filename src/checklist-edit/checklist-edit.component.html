@@ -7,7 +7,7 @@
                     <mat-icon>drag_handle</mat-icon>
                 </button>
                 <mat-checkbox pipDragCancel [checked]="element.checked"></mat-checkbox>
-                <input type="text" [(ngModel)]="element.text" pipDragCancel>
+                <input type="text" placeholder="Text" [(ngModel)]="element.text" pipDragCancel>
                 <button pipDragCancel mat-icon-button (click)="deleteElement(i)">
                     <mat-icon>backspace</mat-icon>
                 </button>

@@ -14,6 +14,19 @@ export class CompositeEditExampleComponent implements OnInit {
 
     public elements: PipCompositeElement[] = [
         {
+            type: PipCompositeElementTypes.CHECKLIST,
+            elements: [
+                {
+                    text: 'Create checklist edit component',
+                    checked: true
+                },
+                {
+                    text: 'Create checklist view component',
+                    checked: false
+                }
+            ]
+        },
+        {
             type: PipCompositeElementTypes.TEXT,
             text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
         },
@@ -51,6 +64,12 @@ export class CompositeEditExampleComponent implements OnInit {
 
     public onSaveForm() {
         console.log('elements', this.elements);
+    }
+
+    public onAdd() {
+        this.elements.push({
+            type: PipCompositeElementTypes.TEXT
+        });
     }
 
 }
