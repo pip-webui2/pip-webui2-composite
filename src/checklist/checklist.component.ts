@@ -36,10 +36,4 @@ export class PipChecklistComponent implements OnInit, AfterViewInit {
 
     ngAfterViewInit() { 
     }
-
-    public updateCheck(event, i) {
-        console.log('event', event);
-        console.log('i', i);
-        this.elements[i].checked = event;
-    }
 }

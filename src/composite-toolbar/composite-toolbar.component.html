@@ -1,0 +1,3 @@
+<button mat-icon-button *ngFor="let element of elements" (click)="onClick(element)">
+    <mat-icon [ngStyle]="{ color: element.color }">{{ element.icon }}</mat-icon>
+</button>

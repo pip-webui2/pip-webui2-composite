@@ -104,6 +104,18 @@ export class PipCompositeEditComponent implements OnInit, AfterViewInit {
         });
     }
 
+    public addByType(type: any) {
+        this.elements.push({
+            type: type
+        });
+        if (this.scrollContainer) {
+            setTimeout(() => {
+                let sContainer = document.querySelector(this.scrollContainer);
+                sContainer.scrollTop = sContainer.scrollHeight;
+            });
+        }
+    }
+
     private setPadding(element: HTMLElement) {
         if (this.prevStyledElement) this.prevStyledElement.style.paddingTop = 0 + 'px';
         element.style.paddingTop = this.draggedElementHeight + 'px';

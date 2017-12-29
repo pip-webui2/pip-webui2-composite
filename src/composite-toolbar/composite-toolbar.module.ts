@@ -2,27 +2,25 @@ import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatIconModule, MatProgressBarModule, MatButtonModule } from '@angular/material';
+import { MatIconModule, MatButtonModule } from '@angular/material';
 
 import { TranslateModule } from '@ngx-translate/core'
 
-import { PipCompositeComponent } from './composite.component';
+import { PipCompositeToolbarComponent } from './composite-toolbar.component';
 
 import { PipLocationModule } from 'pip-webui2-locations';
 import { PipTimeRangeModule } from 'pip-webui2-dates';
 import { PipDocumentListModule } from 'pip-webui2-documents';
 import { PipCollageModule } from 'pip-webui2-pictures';
-import { PipChecklistModule } from '../checklist/checklist.module';
 
 @NgModule({
   declarations: [
-    PipCompositeComponent
+    PipCompositeToolbarComponent
   ],
   imports: [
     BrowserModule,
     FlexLayoutModule,
     MatIconModule,
-    MatProgressBarModule,
     MatButtonModule,
 
     TranslateModule,
@@ -30,12 +28,11 @@ import { PipChecklistModule } from '../checklist/checklist.module';
     PipLocationModule,
     PipTimeRangeModule,
     PipDocumentListModule,
-    PipCollageModule,
-    PipChecklistModule
+    PipCollageModule
   ],
   exports: [
-    PipCompositeComponent
+    PipCompositeToolbarComponent,
   ],
   providers: [],
 })
-export class PipCompositeModule { }
+export class PipCompositeToolbarModule { }

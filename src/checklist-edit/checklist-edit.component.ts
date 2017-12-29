@@ -32,6 +32,7 @@ export class PipChecklistEditComponent implements OnInit, AfterViewInit {
     private draggedElementHeight: number;
     private prevStyledElement: HTMLElement;
     private draggedHtmlElement: HTMLElement;
+    private focusedElement: HTMLElement;
     private draggedIndex: number = null;
     private draggedElement: PipChecklistElement;
 
@@ -93,7 +94,7 @@ export class PipChecklistEditComponent implements OnInit, AfterViewInit {
 
         setTimeout(() => {
             this.draggedElementHeight = 0;
-            this.prevStyledElement.style.paddingTop = 0 + 'px';
+            if (this.prevStyledElement) this.prevStyledElement.style.paddingTop = 0 + 'px';
             this.prevStyledElement = null;
             this.disableForAnimation = false;
         });
@@ -102,6 +103,15 @@ export class PipChecklistEditComponent implements OnInit, AfterViewInit {
     public onAdd() {
         this.elements.push(new PipChecklistElement());
         this.onElementsChange.emit(this.elements);
+    }
+
+    public focusElement(index) {
+        let elements = this.elRef.nativeElement.querySelectorAll('.pip-checklist-element');
+        if (this.focusedElement == elements[index]) return;
+
+        elements[index].classList.add('focused');
+        if (this.focusedElement) this.focusedElement.classList.remove('focused');
+        this.focusedElement = elements[index];
     }
 
     private setPadding(element: HTMLElement) {

@@ -1,5 +1,4 @@
 <mat-card class="scrollable-element">
-    <pip-composite-edit [elements]="elements" scrollContainer=".scrollable-element" (onElementsChange)="elements = $event"></pip-composite-edit>
+    <pip-composite-edit #composite [elements]="elements" scrollContainer=".scrollable-element" (onElementsChange)="elements = $event"></pip-composite-edit>
 </mat-card>
-<button mat-raised-button color="primary" (click)="onSaveForm()">Save form</button>
-<button mat-raised-button color="primary" (click)="onAdd()">Add</button>
+<pip-composite-toolbar [compositeEdit]="composite"></pip-composite-toolbar>

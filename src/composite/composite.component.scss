@@ -4,5 +4,11 @@
         .pip-time-range {
             padding-left: 17px;
         }
+        .pip-composite-element-body {
+            &>div {
+                text-align: justify;
+                margin: 4px 0px;
+            }
+        }
     }
 }
