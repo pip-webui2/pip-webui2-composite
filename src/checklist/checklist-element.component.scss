@@ -1,0 +1,19 @@
+:host.pip-checklist-element {
+    width: 100%;
+    padding: 0 16px;
+    height: auto;
+    min-height: 48px;
+    place-content: center flex-start;
+    align-items: center;
+    flex-direction: row;
+    box-sizing: border-box;
+    display: flex;
+    span {
+        flex: 1 1 100%;
+        box-sizing: border-box;
+        margin-top: 2px;
+    }
+    mat-checkbox {
+        margin-right: 16px;
+    }
+}

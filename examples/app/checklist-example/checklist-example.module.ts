@@ -7,7 +7,7 @@ import { MatButtonModule, MatIconModule, MatSlideToggleModule, MatCardModule } f
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ChecklistExampleComponent } from './checklist-example.component';
-import { PipChecklistEditModule } from '../pip-webui2-composite';
+import { PipChecklistEditModule, PipChecklistModule } from '../pip-webui2-composite';
 
 @NgModule({
   declarations: [
@@ -25,7 +25,8 @@ import { PipChecklistEditModule } from '../pip-webui2-composite';
 
     TranslateModule,
 
-    PipChecklistEditModule
+    PipChecklistEditModule,
+    PipChecklistModule
   ],
   exports: [
     ChecklistExampleComponent

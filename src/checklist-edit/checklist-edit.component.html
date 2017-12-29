@@ -3,19 +3,19 @@
             pipDrop="true" forceTouch="true" touchDelay="100" (dragStart)="onDragStart($event, i)" (enter)="onEnter($event, i)"
             (dragStop)="onDragStop($event, i)" (dropSuccess)="onDropSuccess($event, i)">
             <div>
-                <button mat-icon-button>
+                <button [disabled]="disabled" mat-icon-button>
                     <mat-icon>drag_handle</mat-icon>
                 </button>
-                <mat-checkbox pipDragCancel [checked]="element.checked"></mat-checkbox>
-                <input type="text" placeholder="Text" [(ngModel)]="element.text" pipDragCancel>
-                <button pipDragCancel mat-icon-button (click)="deleteElement(i)">
+                <mat-checkbox pipDragCancel [disabled]="disabled" [checked]="element.checked" (change)="element.checked = $event.checked"></mat-checkbox>
+                <input [disabled]="disabled" type="text" placeholder="Text" [(ngModel)]="element.text" pipDragCancel>
+                <button [disabled]="disabled" pipDragCancel mat-icon-button (click)="deleteElement(i)">
                     <mat-icon>backspace</mat-icon>
                 </button>
             </div>
         </div>
-    <div class="pip-checklist-element " pipDrop="true" (enter)="onEnter($event, elements.length)" (dropSuccess)="onDropSuccess($event, elements.length)">
+    <div class="pip-checklist-element" pipDrop="true" (enter)="onEnter($event, elements.length)" (dropSuccess)="onDropSuccess($event, elements.length)">
         <div>
-            <button mat-icon-button class="add-button" (click)="onAdd()">
+            <button [disabled]="disabled" mat-icon-button class="add-button" (click)="onAdd()">
                 <mat-icon>add</mat-icon>
             </button>
         </div>

@@ -2,11 +2,12 @@ import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatIconModule, MatProgressBarModule, MatButtonModule } from '@angular/material';
+import { MatIconModule, MatProgressBarModule, MatButtonModule, MatCheckboxModule } from '@angular/material';
 
 import { TranslateModule } from '@ngx-translate/core'
 
 import { PipChecklistComponent } from './checklist.component';
+import { PipChecklistElementComponent } from './checklist-element.component';
 
 import { PipLocationModule } from 'pip-webui2-locations';
 import { PipTimeRangeModule } from 'pip-webui2-dates';
@@ -15,7 +16,8 @@ import { PipCollageModule } from 'pip-webui2-pictures';
 
 @NgModule({
   declarations: [
-    PipChecklistComponent
+    PipChecklistComponent,
+    PipChecklistElementComponent
   ],
   imports: [
     BrowserModule,
@@ -23,6 +25,7 @@ import { PipCollageModule } from 'pip-webui2-pictures';
     MatIconModule,
     MatProgressBarModule,
     MatButtonModule,
+    MatCheckboxModule,
 
     TranslateModule,
 
@@ -32,7 +35,8 @@ import { PipCollageModule } from 'pip-webui2-pictures';
     PipCollageModule
   ],
   exports: [
-    PipChecklistComponent
+    PipChecklistComponent,
+    PipChecklistElementComponent
   ],
   providers: [],
 })

@@ -26,7 +26,7 @@ export class ChecklistExampleComponent implements OnInit {
             text: 'Finish magistry site',
         },
         {
-            text: '',
+            text: 'Some text here...',
         }
     ];
 

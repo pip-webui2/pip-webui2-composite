@@ -1,15 +1,27 @@
 import * as _ from 'lodash';
 import { Component, QueryList, trigger, transition, style, animate, Input, Output, OnInit, AfterViewInit, EventEmitter, Renderer, ElementRef, HostListener, ViewChildren } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core'
-//import { PipChecklistElement } from '../shared/checklist-element.model';
+import { PipChecklistElement } from '../shared/checklist-element.model';
 
 @Component({
     selector: 'pip-checklist',
     templateUrl: 'checklist.component.html',
-    styleUrls: ['./checklist.component.scss']
+    styleUrls: ['./checklist.component.scss'],
+    animations: [
+        trigger('fadeIn', [
+            transition('* => void', [
+                style({ height: '48px', opacity: '1'}),
+                animate('.35s ease', style({ height: '0', opacity: '0'})),
+            ]),
+            transition('void => *', [
+                style({ height: '0', opacity: '0'}),
+                animate('.35s ease', style({ height: '48px', opacity: '1'})),
+            ])
+        ]),
+    ]
 })
 export class PipChecklistComponent implements OnInit, AfterViewInit {
-    @Input() public elements: any[] /*PipChecklistElement[]*/ = [];
+    @Input() public elements: PipChecklistElement[] = [];
     @Input() disabled: boolean = false;
 
     ngOnInit() {}
@@ -23,5 +35,11 @@ export class PipChecklistComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() { 
+    }
+
+    public updateCheck(event, i) {
+        console.log('event', event);
+        console.log('i', i);
+        this.elements[i].checked = event;
     }
 }
