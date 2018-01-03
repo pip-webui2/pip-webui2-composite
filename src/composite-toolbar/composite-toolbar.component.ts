@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import { Component, QueryList, trigger, transition, style, animate, Input, Output, OnInit, AfterViewInit, EventEmitter, Renderer, ElementRef, HostListener, ViewChildren } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core'
 import { PipCompositeToolbarElement } from '../shared/composite-toolbar-element.model';
@@ -53,7 +52,7 @@ export class PipCompositeToolbarComponent implements OnInit, AfterViewInit {
     @Input() compositeEdit: PipCompositeEditComponent;
 
     @Output() elementClick: EventEmitter<PipCompositeToolbarElement> = new EventEmitter<PipCompositeToolbarElement>();
-    ngOnInit() {}
+    ngOnInit() { }
 
     constructor(
         private renderer: Renderer,
@@ -63,15 +62,20 @@ export class PipCompositeToolbarComponent implements OnInit, AfterViewInit {
         renderer.setElementClass(elRef.nativeElement, 'pip-composite-toolbar', true);
     }
 
-    ngAfterViewInit() { 
+    ngAfterViewInit() {
     }
 
     private onClick(element: PipCompositeToolbarElement) {
         console.log();
         if (this.compositeEdit) this.compositeEdit.addByType(element.type);
         else {
-            if (element.action && _.isFunction(element.action)) element.action(element);
+            if (element.action && this.isFunction(element.action)) element.action(element);
         }
         this.elementClick.emit(element);
+    }
+
+    private isFunction(functionToCheck) {
+        var getType = {};
+        return functionToCheck && getType.toString.call(functionToCheck) === '[object Function]';
     }
 }

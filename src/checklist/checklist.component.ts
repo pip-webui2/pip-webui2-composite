@@ -1,4 +1,3 @@
-import * as _ from 'lodash';
 import { Component, QueryList, trigger, transition, style, animate, Input, Output, OnInit, AfterViewInit, EventEmitter, Renderer, ElementRef, HostListener, ViewChildren } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core'
 import { PipChecklistElement } from '../shared/checklist-element.model';

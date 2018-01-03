@@ -1,7 +1,7 @@
-import * as _ from 'lodash';
 import { Component, QueryList, trigger, state, transition, style, animate, Input, Output, OnInit, AfterViewInit, EventEmitter, Renderer, ElementRef, HostListener, ViewChildren } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { PipChecklistElement } from '../shared/checklist-element.model';
+import { throttle } from '../shared/utils';
 
 @Component({
     selector: 'pip-checklist-edit',
@@ -49,7 +49,7 @@ export class PipChecklistEditComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() { 
-        this.debouncedSetPadding = _.throttle((element) => {
+        this.debouncedSetPadding = throttle((element) => {
             this.setPadding(element);
         }, 250);
     }

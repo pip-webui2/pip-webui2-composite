@@ -1,7 +1,7 @@
-import * as _ from 'lodash';
 import { Component, trigger, state, transition, style, animate, Input, Output, OnInit, AfterViewInit, ViewChild, EventEmitter, Renderer, ElementRef, HostListener } from '@angular/core';
 import { CompositeElementTypes } from '../shared/composite-element-types.model';
 import { PipCompositeElement } from '../shared/composite-element.model';
+import { throttle } from '../shared/utils';
 
 @Component({
     selector: 'pip-composite-edit',
@@ -49,7 +49,7 @@ export class PipCompositeEditComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        this.debouncedSetPadding = _.throttle((element) => {
+        this.debouncedSetPadding = throttle((element) => {
             this.setPadding(element);
         }, 250);
     }
