@@ -1,0 +1,7 @@
+<mat-card>
+  <pip-checklist-edit [disabled]="disabled" [elements]="elements"></pip-checklist-edit>
+
+  <pip-checklist [disabled]="disabled" [elements]="elements"></pip-checklist>
+</mat-card>
+
+<mat-slide-toggle [(ngModel)]="disabled" style="margin-top: 16px">Disabled</mat-slide-toggle>

@@ -1,0 +1,10 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/pip-webui2-composite",
+  "lib": {
+    "entryFile": "src/public_api.ts"
+  },
+  "whitelistedNonPeerDependencies": [
+    "^pip-webui2"
+  ]
+}

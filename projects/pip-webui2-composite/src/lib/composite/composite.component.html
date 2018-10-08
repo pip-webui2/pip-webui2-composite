@@ -1,0 +1,16 @@
+<div class="pip-composite-body">
+    <div *ngFor="let element of elements; let i = index" class="pip-composite-element">
+        <div class="pip-composite-element-body" [ngSwitch]="element.type">
+            <div *ngSwitchCase="elementTypes.TEXT">
+                {{ element.text }}
+            </div>
+            <pip-location [locationPos]="element.location" [disabled]="disabled" [locationName]="element.locationName"
+                          *ngSwitchCase="elementTypes.LOCATION">
+            </pip-location>
+            <pip-document-list [disabled]="disabled" [documents]="element.documents" *ngSwitchCase="elementTypes.DOCUMENTS"></pip-document-list>
+            <pip-collage [(srcs)]="element.pictures" *ngSwitchCase="elementTypes.PICTURES"></pip-collage>
+            <pip-time-range [startDate]="element.startDate" [endDate]="element.endDate" *ngSwitchCase="elementTypes.TIME"></pip-time-range>
+            <pip-checklist [disabled]="disabled" [elements]="element.elements" *ngSwitchCase="elementTypes.CHECKLIST"></pip-checklist>
+        </div>
+    </div>
+</div>

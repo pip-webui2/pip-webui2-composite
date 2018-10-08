@@ -1,0 +1,37 @@
+<pip-root-layout>
+  <pip-sidenav-floating style="height: 100%">
+    <pip-nav-menu></pip-nav-menu>
+  </pip-sidenav-floating>
+  <pip-rightnav-floating fxLayout="column">
+    <mat-toolbar color="warn">
+      <span>Inbox</span>
+    </mat-toolbar>
+    <mat-list>
+      <mat-list-item *ngFor="let message of messages" style="cursor: pointer">
+        <img matListAvatar src="{{ message.image_src }}" alt="message.subject">
+        <h3 matLine> {{ message.from }} </h3>
+        <p matLine>
+          <span> {{message.subject}} </span>
+          <span> -- {{message.content}} </span>
+        </p>
+      </mat-list-item>
+    </mat-list>
+  </pip-rightnav-floating>
+  <pip-root-content>
+    <pip-appbar>
+      <pip-nav-icon> </pip-nav-icon>
+      <pip-breadcrumb> </pip-breadcrumb>
+      <div fxFlex></div>
+      <pip-primary-actions> </pip-primary-actions>
+      <pip-secondary-actions></pip-secondary-actions>
+    </pip-appbar>
+    <pip-main-layout>
+      <pip-sidenav-fixed>
+        <pip-nav-menu></pip-nav-menu>
+      </pip-sidenav-fixed>
+      <pip-main-content>
+        <router-outlet></router-outlet>
+      </pip-main-content>
+    </pip-main-layout>
+  </pip-root-content>
+</pip-root-layout>

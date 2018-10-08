@@ -1,0 +1,4 @@
+<mat-card class="scrollable-element">
+  <pip-composite-edit #composite [elements]="elements" scrollContainer=".scrollable-element" (onElementsChange)="elements = $event"></pip-composite-edit>
+</mat-card>
+<pip-composite-toolbar [compositeEdit]="composite"></pip-composite-toolbar>

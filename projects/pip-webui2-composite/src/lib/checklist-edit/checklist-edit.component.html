@@ -1,0 +1,26 @@
+<div class="pip-checklist-body" [ngStyle]="{ height: ((elements.length + 1) * 48) + 'px'}">
+    <div [@fadeIn]="''" [@.disabled]="disableForAnimation" class="pip-checklist-element" *ngFor="let element of elements; let i = index"
+         pipDrag="true" pipDrop="true" forceTouch="true" touchDelay="100"
+         (dragStart)="onDragStart($event, i)" (enter)="onEnter($event, i)" (dragStop)="onDragStop($event, i)"
+         (dropSuccess)="onDropSuccess($event, i)">
+        <div (click)="focusElement(i)">
+            <button tabindex="-1" [disabled]="disabled" mat-icon-button class="move-button">
+                <mat-icon>drag_handle</mat-icon>
+            </button>
+        </div>
+        <div pipDragCancel (click)="focusElement(i)">
+            <mat-checkbox tabindex="-1" [disabled]="disabled" [checked]="element.checked" (change)="element.checked = $event.checked"></mat-checkbox>
+            <input [disabled]="disabled" type="text" placeholder="Text" [(ngModel)]="element.text">
+            <button tabindex="-1" [disabled]="disabled" mat-icon-button (click)="deleteElement(i)" class="delete-button">
+                <mat-icon>cancel</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="pip-checklist-element" pipDrop="true" (enter)="onEnter($event, elements.length)" (dropSuccess)="onDropSuccess($event, elements.length)">
+        <div>
+            <button [disabled]="disabled" mat-icon-button class="add-button" (click)="onAdd()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>
