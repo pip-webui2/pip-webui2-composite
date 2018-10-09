@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule, MatProgressBarModule, MatButtonModule, MatCheckboxModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
-import { PipDraggableModule } from 'pip-webui2-behaviors-temp';
+import { PipDraggableModule } from 'pip-webui2-behaviors';
 
 import { PipChecklistEditComponent } from './checklist-edit.component';
 

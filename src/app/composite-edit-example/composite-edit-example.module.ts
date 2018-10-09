@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatIconModule, MatButtonToggleModule, MatCardModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipCompositeEditModule, PipCompositeToolbarModule } from 'pip-webui2-composite';
-import { PipSidenavModule } from 'pip-webui2-layouts-temp';
-import { PipNavModule } from 'pip-webui2-nav-temp';
+import { PipSidenavModule } from 'pip-webui2-layouts';
+import { PipNavModule } from 'pip-webui2-nav';
 
 import { CompositeEditExampleComponent } from './composite-edit-example.component';
 

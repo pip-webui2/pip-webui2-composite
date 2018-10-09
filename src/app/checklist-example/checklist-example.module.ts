@@ -4,8 +4,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule, MatIconModule, MatSlideToggleModule, MatCardModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import { PipChecklistEditModule, PipChecklistModule } from 'pip-webui2-composite';
-import { PipSidenavModule } from 'pip-webui2-layouts-temp';
-import { PipNavModule } from 'pip-webui2-nav-temp';
+import { PipSidenavModule } from 'pip-webui2-layouts';
+import { PipNavModule } from 'pip-webui2-nav';
 
 import { ChecklistExampleComponent } from './checklist-example.component';
 

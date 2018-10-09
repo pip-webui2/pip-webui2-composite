@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PipCompositeElement, PipCompositeElementTypes } from 'pip-webui2-composite';
-import { PipSidenavService } from 'pip-webui2-layouts-temp';
-import { PipNavService } from 'pip-webui2-nav-temp';
+import { PipSidenavService } from 'pip-webui2-layouts';
+import { PipNavService } from 'pip-webui2-nav';
 
 @Component({
   selector: 'app-composite-example',

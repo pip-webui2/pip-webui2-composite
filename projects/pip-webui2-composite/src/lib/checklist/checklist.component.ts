@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { TranslateService } from '@ngx-translate/core';
+
 import { PipChecklistElement } from '../shared/checklist-element.model';
 
 @Component({

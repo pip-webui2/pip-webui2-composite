@@ -1,6 +1,5 @@
 import { Component, Input, Output, OnInit, AfterViewInit, EventEmitter, Renderer, ElementRef } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { PipChecklistElement } from '../shared/checklist-element.model';
 
 @Component({
     selector: 'pip-checklist-element',

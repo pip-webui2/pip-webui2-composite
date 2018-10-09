@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from '@angular/material';
 import { TranslateService } from '@ngx-translate/core';
 import { each } from 'lodash';
-import { PipMediaService, PipSidenavService, PipRightnavService } from 'pip-webui2-layouts-temp';
-import { PipNavService } from 'pip-webui2-nav-temp';
-import { PipThemesService, Theme } from 'pip-webui2-themes-temp';
+import { PipMediaService, PipSidenavService, PipRightnavService } from 'pip-webui2-layouts';
+import { PipNavService } from 'pip-webui2-nav';
+import { PipThemesService, Theme } from 'pip-webui2-themes';
 
 import { AppTranslations } from './app.strings';
 

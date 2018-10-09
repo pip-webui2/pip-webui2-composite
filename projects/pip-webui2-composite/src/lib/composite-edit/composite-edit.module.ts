@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule, MatIconModule, MatInputModule } from '@angular/material';
-import { PipDraggableModule } from 'pip-webui2-behaviors-temp';
+import { PipDraggableModule } from 'pip-webui2-behaviors';
 import { PiplocationEditModule } from 'pip-webui2-locations';
 import { PipTimeRangeEditModule } from 'pip-webui2-dates';
 import { PipDocumentListEditModule } from 'pip-webui2-documents';
