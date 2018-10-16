@@ -31,7 +31,7 @@
     "pip-webui2-behaviors": "^1.0.0",
     "pip-webui2-dates": "^1.0.0",
     "pip-webui2-documents": "^1.0.0",
-    "pip-webui2-layouts": "^1.0.0",
+    "pip-webui2-layouts": "^1.0.2-beta.1",
     "pip-webui2-locations": "^1.0.0",
     "pip-webui2-nav": "^1.0.0",
     "pip-webui2-pictures": "^1.0.0",
