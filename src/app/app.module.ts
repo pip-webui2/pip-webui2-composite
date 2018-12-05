@@ -5,22 +5,22 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatToolbarModule, MatListModule, MatButtonModule } from '@angular/material';
 import { TranslateModule } from '@ngx-translate/core';
 import {
-  PipAppbarModule,
-  PipRightnavModule,
-  PipMediaModule,
-  PipSidenavModule,
-  PipMainLayoutModule,
-  PipRootLayoutModule,
-  PipSidenavExpanderModule
+    PipAppbarModule,
+    PipRightnavModule,
+    PipMediaModule,
+    PipSidenavModule,
+    PipMainLayoutAltModule,
+    PipRootLayoutModule,
+    PipSidenavExpanderModule
 } from 'pip-webui2-layouts';
 import {
-  PipBreadcrumbModule,
-  PipNavIconModule,
-  PipPrimaryActionsModule,
-  PipSecondaryActionsModule,
-  PipNavModule,
-  PipNavHeaderModule,
-  PipNavMenuModule
+    PipBreadcrumbModule,
+    PipNavIconModule,
+    PipPrimaryActionsModule,
+    PipSecondaryActionsModule,
+    PipNavModule,
+    PipNavHeaderModule,
+    PipNavMenuModule
 } from 'pip-webui2-nav';
 
 import { PipThemesModule } from 'pip-webui2-themes';
@@ -32,38 +32,38 @@ import { CompositeEditExampleModule } from './composite-edit-example/composite-e
 import { CompositeExampleModule } from './composite-example/composite-example.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    FlexLayoutModule,
-    MatToolbarModule, MatListModule, MatButtonModule,
-    TranslateModule.forRoot(),
+    declarations: [
+        AppComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        FlexLayoutModule,
+        MatToolbarModule, MatListModule, MatButtonModule,
+        TranslateModule.forRoot(),
 
-    PipThemesModule,
-    PipAppbarModule,
-    PipRightnavModule,
-    PipMediaModule,
-    PipSidenavModule,
-    PipMainLayoutModule,
-    PipRootLayoutModule,
-    PipSidenavExpanderModule,
-    PipBreadcrumbModule,
-    PipNavIconModule,
-    PipPrimaryActionsModule,
-    PipSecondaryActionsModule,
-    PipNavModule,
-    PipNavHeaderModule,
-    PipNavMenuModule,
+        PipThemesModule.forRoot(),
+        PipAppbarModule,
+        PipRightnavModule.forRoot(),
+        PipMediaModule.forRoot(),
+        PipSidenavModule.forRoot(),
+        PipMainLayoutAltModule,
+        PipRootLayoutModule,
+        PipSidenavExpanderModule,
+        PipBreadcrumbModule,
+        PipNavIconModule,
+        PipPrimaryActionsModule,
+        PipSecondaryActionsModule,
+        PipNavModule,
+        PipNavHeaderModule,
+        PipNavMenuModule,
 
-    AppRoutingModule,
-    ChecklistExampleModule,
-    CompositeEditExampleModule,
-    CompositeExampleModule
-  ],
-  bootstrap: [AppComponent],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+        AppRoutingModule,
+        ChecklistExampleModule,
+        CompositeEditExampleModule,
+        CompositeExampleModule
+    ],
+    bootstrap: [AppComponent],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }

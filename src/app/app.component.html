@@ -1,7 +1,4 @@
 <pip-root-layout>
-  <pip-sidenav-floating style="height: 100%">
-    <pip-nav-menu></pip-nav-menu>
-  </pip-sidenav-floating>
   <pip-rightnav-floating fxLayout="column">
     <mat-toolbar color="warn">
       <span>Inbox</span>
@@ -25,13 +22,13 @@
       <pip-primary-actions> </pip-primary-actions>
       <pip-secondary-actions></pip-secondary-actions>
     </pip-appbar>
-    <pip-main-layout>
-      <pip-sidenav-fixed>
+    <pip-main-layout-alt>
+      <pip-sidenav>
         <pip-nav-menu></pip-nav-menu>
-      </pip-sidenav-fixed>
+      </pip-sidenav>
       <pip-main-content>
         <router-outlet></router-outlet>
       </pip-main-content>
-    </pip-main-layout>
+    </pip-main-layout-alt>
   </pip-root-content>
 </pip-root-layout>

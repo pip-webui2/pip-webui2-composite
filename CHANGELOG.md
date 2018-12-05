@@ -30,7 +30,7 @@ No breaking changes in this version
 ### Bug Fixes
 No fixes in this version
 
-## <a name="1.1.0"></a> 1.010 (2018-11-23)
+## <a name="1.1.0"></a> 1.1.0 (2018-11-23)
 
 Update to stable Angular 7 and fix the tests.
 
@@ -47,3 +47,17 @@ No breaking changes in this version
 * Example tests works now. Run `npm run test` to check it out;
 * E2E tests works too. Run `npm run e2e` to check it out.
 
+## <a name="1.1.1"></a> 1.1.1 (2018-12-05)
+
+Angular minor update; example update
+
+### Features
+* **composite**: composite content control
+* **check list**: check list view and edit controls
+* **composite toolbar**: content switch control
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version
