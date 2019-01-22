@@ -1,6 +1,5 @@
-@import '~@angular/material/theming';
-@import '~pip-webui2-themes/styles.scss';
-@include mat-core();
+@import '~pip-webui2-themes/variables';
+
 @mixin checklist-mixin($theme) {
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
@@ -24,60 +23,10 @@
     }
 }
 
-.unicorn-dark-theme {
-    @include checklist-mixin($dark-theme);
-}
-
-.candy-theme {
-    @include checklist-mixin($candy-app-theme);
-}
-
-.pip-blue-theme {
-    @include checklist-mixin($pip-blue-theme);
-}
-
-.pip-grey-theme {
-    @include checklist-mixin($pip-grey-theme);
-}
-
-.pip-navy-theme {
-    @include checklist-mixin($pip-navy-theme);
-}
-
-.pip-amber-theme {
-    @include checklist-mixin($pip-amber-theme);
-}
-
-.pip-green-theme {
-    @include checklist-mixin($pip-green-theme);
-}
-
-.pip-orange-theme {
-    @include checklist-mixin($pip-orange-theme);
-}
-
-.pip-pink-theme {
-    @include checklist-mixin($pip-pink-theme);
-}
-
-.pip-dark-theme {
-    @include checklist-mixin($pip-dark-theme);
-}
-
-.pip-black-theme {
-    @include checklist-mixin($pip-black-theme);
-}
-
-.bootbarn-warm-theme {
-    @include checklist-mixin($bootbarn-warm-theme);
-}
-
-.bootbarn-cool-theme {
-    @include checklist-mixin($bootbarn-cool-theme);
-}
-
-.bootbarn-mono-theme {
-    @include checklist-mixin($bootbarn-mono-theme);
+@each $class, $theme in $themes {
+    .#{$class} {
+        @include checklist-mixin($theme);
+    }
 }
 
 :host {

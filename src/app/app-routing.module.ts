@@ -9,7 +9,7 @@ const appRoutes: Routes = [
     { path: 'composite', component: CompositeExampleComponent },
     { path: 'composite_edit', component: CompositeEditExampleComponent },
     { path: 'checklist', component: ChecklistExampleComponent },
-    { path: '', pathMatch: 'full', redirectTo: 'composite' }
+    { path: '**', redirectTo: 'composite' }
 ];
 
 @NgModule({

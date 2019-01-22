@@ -32,7 +32,10 @@ export class AppComponent implements OnInit {
     'pip-black-theme': 'Black',
     'bootbarn-warm-theme': 'Bootbarn Warm',
     'bootbarn-cool-theme': 'Bootbarn Cool',
-    'bootbarn-mono-theme': 'Bootbarn Mono'
+    'bootbarn-mono-theme': 'Bootbarn Mono',
+    'mst-light-theme': 'MST Light',
+    'mst-dark-theme': 'MST Dark',
+    'mst-mono-theme': 'MST Mono',
   };
   public messages: any[] = [
     { image_src: '/assets/girl.png', subject: 'University', from: 'Marta', content: 'Tommorow you should visit university' },
@@ -69,15 +72,16 @@ export class AppComponent implements OnInit {
       actions: [
         {
           icon: 'notifications',
+          name: 'notifications',
           click: () => {
             this.rightnav.toggleRightnav();
           }
         },
         {
-          icon: 'translate', subActions: this.generatePrimaryActionLanguageList()
+          icon: 'translate', name: 'translate', subActions: this.generatePrimaryActionLanguageList()
         },
         {
-          icon: 'format_color_fill', subActions: this.generatePrimaryActionThemeList()
+          icon: 'format_color_fill', name: 'format_color_fill', subActions: this.generatePrimaryActionThemeList()
         }
       ]
     });

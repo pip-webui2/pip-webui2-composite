@@ -1,6 +1,5 @@
-@import '~@angular/material/theming';
-@import '~pip-webui2-themes/styles.scss';
-@include mat-core();
+@import '~pip-webui2-themes/variables';
+
 @mixin composite-toolbar-mixin($theme) {
     $foreground: map-get($theme, foreground);
     $background: map-get($theme, background);
@@ -10,60 +9,10 @@
     }
 }
 
-.unicorn-dark-theme {
-    @include composite-toolbar-mixin($dark-theme);
-}
-
-.candy-theme {
-    @include composite-toolbar-mixin($candy-app-theme);
-}
-
-.pip-blue-theme {
-    @include composite-toolbar-mixin($pip-blue-theme);
-}
-
-.pip-grey-theme {
-    @include composite-toolbar-mixin($pip-grey-theme);
-}
-
-.pip-navy-theme {
-    @include composite-toolbar-mixin($pip-navy-theme);
-}
-
-.pip-amber-theme {
-    @include composite-toolbar-mixin($pip-amber-theme);
-}
-
-.pip-green-theme {
-    @include composite-toolbar-mixin($pip-green-theme);
-}
-
-.pip-orange-theme {
-    @include composite-toolbar-mixin($pip-orange-theme);
-}
-
-.pip-pink-theme {
-    @include composite-toolbar-mixin($pip-pink-theme);
-}
-
-.pip-dark-theme {
-    @include composite-toolbar-mixin($pip-dark-theme);
-}
-
-.pip-black-theme {
-    @include composite-toolbar-mixin($pip-black-theme);
-}
-
-.bootbarn-warm-theme {
-    @include composite-toolbar-mixin($bootbarn-warm-theme);
-}
-
-.bootbarn-cool-theme {
-    @include composite-toolbar-mixin($bootbarn-cool-theme);
-}
-
-.bootbarn-mono-theme {
-    @include composite-toolbar-mixin($bootbarn-mono-theme);
+@each $class, $theme in $themes {
+    .#{$class} {
+        @include composite-toolbar-mixin($theme);
+    }
 }
 
 :host {
