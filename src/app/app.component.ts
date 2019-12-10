@@ -33,9 +33,12 @@ export class AppComponent implements OnInit {
     'bootbarn-warm-theme': 'Bootbarn Warm',
     'bootbarn-cool-theme': 'Bootbarn Cool',
     'bootbarn-mono-theme': 'Bootbarn Mono',
-    'mst-light-theme': 'MST Light',
-    'mst-dark-theme': 'MST Dark',
+    'mst-black-theme': 'MST Black',
+    'mst-black-dark-theme': 'MST Black Dark',
     'mst-mono-theme': 'MST Mono',
+    'mst-orange-theme': 'MST Orange',
+    'mst-orange-dark-theme': 'MST Orange Dark',
+    'mst-elegant-theme': 'MST Elegant'
   };
   public messages: any[] = [
     { image_src: '/assets/girl.png', subject: 'University', from: 'Marta', content: 'Tommorow you should visit university' },

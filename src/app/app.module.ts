@@ -43,7 +43,7 @@ import { CompositeExampleModule } from './composite-example/composite-example.mo
         TranslateModule.forRoot(),
 
         PipThemesModule.forRoot(),
-        PipAppbarModule,
+        PipAppbarModule.forRoot(),
         PipRightnavModule.forRoot(),
         PipMediaModule.forRoot(),
         PipSidenavModule.forRoot(),

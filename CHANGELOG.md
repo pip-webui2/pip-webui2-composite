@@ -76,3 +76,33 @@ No breaking changes in this version
 
 ### Bug Fixes
 No fixes in this version
+
+## <a name="1.1.3"></a> 1.1.3 (2019-11-14)
+
+Update to new themes
+
+### Features
+* **composite**: composite content control
+* **check list**: check list view and edit controls
+* **composite toolbar**: content switch control
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version
+
+## <a name="1.1.4"></a> 1.1.4 (2019-12-10)
+
+`accent` and `primary` colors switched in `mst-elegant-theme`
+
+### Features
+* **composite**: composite content control
+* **check list**: check list view and edit controls
+* **composite toolbar**: content switch control
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version

@@ -5,12 +5,12 @@
     "entryFile": "src/public_api.ts",
     "umdModuleIds": {
       "@ngx-translate/core": "^11.0.1",
-      "pip-webui2-behaviors": "^1.1.9",
-      "pip-webui2-dates": "^1.1.2",
-      "pip-webui2-documents": "^1.1.2",
-      "pip-webui2-locations": "^1.1.2",
-      "pip-webui2-pictures": "^1.1.4",
-      "pip-webui2-themes": "^1.1.10"
+      "pip-webui2-behaviors": "^1.1.22",
+      "pip-webui2-dates": "^1.1.4",
+      "pip-webui2-documents": "^1.1.4",
+      "pip-webui2-locations": "^1.1.4",
+      "pip-webui2-pictures": "^1.1.11",
+      "pip-webui2-themes": "^1.1.20"
     }
   },
   "whitelistedNonPeerDependencies": [
