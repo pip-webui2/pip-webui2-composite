@@ -106,3 +106,18 @@ No breaking changes in this version
 
 ### Bug Fixes
 No fixes in this version
+
+## <a name="1.1.5"></a> 1.1.5 (2019-12-20)
+
+All `/deep/` in scss changed with `::ng-deep`, because it is deprecated in Angular 8
+
+### Features
+* **composite**: composite content control
+* **check list**: check list view and edit controls
+* **composite toolbar**: content switch control
+
+### Breaking Changes
+No breaking changes in this version
+
+### Bug Fixes
+No fixes in this version
